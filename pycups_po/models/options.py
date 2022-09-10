@@ -1,5 +1,5 @@
 from dataclasses import dataclass
-from typing import Literal
+from typing import Literal, List
 
 
 @dataclass
@@ -13,4 +13,4 @@ class PrinterOption:
     name: str
     type: Literal["PickOne"]
     default_value: str
-    values: list[OptionValue]
+    values: List[OptionValue]

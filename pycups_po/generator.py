@@ -1,6 +1,7 @@
 import re
 
 import cups
+from typing import List
 
 from .models import OptionValue, PrinterOption
 
@@ -16,7 +17,7 @@ class PrinterOptionsGenerator:
         ppd_path = self.connection.getPPD(printer_name)
         return open(ppd_path, "r").read()
 
-    def get_ppd_options(self, printer_name: str = None) -> list[PrinterOption]:
+    def get_ppd_options(self, printer_name: str = None) -> List[PrinterOption]:
         text = self.get_ppd_text(printer_name or self.printer_name)
         options_blocks = re.finditer(self.regex, text, re.MULTILINE)
 
