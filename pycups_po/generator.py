@@ -3,6 +3,7 @@ import re
 import cups
 from typing import List
 
+from .helpers import remove_prefix
 from .models import OptionValue, PrinterOption
 
 
@@ -19,15 +20,15 @@ class PrinterOptionsGenerator:
 
     def get_ppd_options(self, printer_name: str = None) -> List[PrinterOption]:
         text = self.get_ppd_text(printer_name or self.printer_name)
-        options_blocks = re.finditer(self.regex, text, re.MULTILINE)
+        option_blocks = re.finditer(self.regex, text, re.MULTILINE)
 
         options = []
 
-        for option_block in options_blocks:
+        for option_block in option_blocks:
 
             groups = option_block.groups()
             option_name, option_type = (i.strip() for i in groups[0].split(":"))
-            option_name = option_name.split(" ", 1)[1].split("/")[0].removeprefix("*")
+            option_name = remove_prefix(option_name.split(" ", 1)[1].split("/")[0], "*")
             default_value = ""
 
             option_values = []
@@ -37,12 +38,14 @@ class PrinterOptionsGenerator:
                 if option_value.startswith(f"*Default{option_name}"):
                     default_value = option_value.split(": ")[1]
                 if option_value.startswith(f"*{option_name}"):
+                    option_value, content = option_value.split(":")
                     option_value, option_pretty_value = (
-                        option_value.split(":")[0].split(" ", 1)[1].split("/", 1)
+                        option_value.split(" ", 1)[1].split("/", 1)
                     )
+                    content = content.strip().strip()
                     option_values.append(
                         OptionValue(
-                            value=option_value, pretty_value=option_pretty_value
+                            value=option_value, pretty_value=option_pretty_value, content=""
                         )
                     )
 

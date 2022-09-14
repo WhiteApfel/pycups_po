@@ -6,6 +6,7 @@ from typing import Literal, List
 class OptionValue:
     value: str
     pretty_value: str
+    content: str
 
 
 @dataclass
