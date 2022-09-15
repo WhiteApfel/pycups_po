@@ -55,4 +55,3 @@ def test_option_value_pretty_value(generator: FakeGenerator):
 
     assert options[0].values[0].pretty_value == "0"
     assert options[1].values[1].pretty_value == "1"
-

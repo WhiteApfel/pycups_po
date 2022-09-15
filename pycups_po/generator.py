@@ -1,7 +1,7 @@
 import re
+from typing import List
 
 import cups
-from typing import List
 
 from .helpers import remove_prefix
 from .models import OptionValue, PrinterOption
