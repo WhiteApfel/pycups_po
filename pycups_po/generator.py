@@ -25,33 +25,96 @@ class PrinterOptionsGenerator:
         options = []
 
         for option_block in option_blocks:
+            # option_block:
+            # *OpenUI *BuzzerStart/Start Job Beeps: PickOne
+            # *DefaultBuzzerStart: 0Beeps
+            # *BuzzerStart 0Beeps/0: ""
+            # *BuzzerStart 1Beeps/1: ""
+            # *BuzzerStart 2Beeps/2: ""
+            # *BuzzerStart 3Beeps/3: ""
+            # *BuzzerStart 4Beeps/4: ""
+            # *BuzzerStart 5Beeps/5: ""
+            # *BuzzerStart 6Beeps/6: ""
+            # *BuzzerStart 7Beeps/7: ""
+            # *BuzzerStart 8Beeps/8: ""
+            # *BuzzerStart 9Beeps/9: ""
+            # *CloseUI: *BuzzerStart
+            #
 
             groups = option_block.groups()
+
+            # groups[0] == "*OpenUI *BuzzerStart/Start Job Beeps: PickOne"
+            # option_name == "*OpenUI *BuzzerStart/Start Job Beeps"
+            # option_type == "PickOne"
             option_name, option_type = (i.strip() for i in groups[0].split(":"))
-            option_name = remove_prefix(option_name.split(" ", 1)[1].split("/")[0], "*")
+
+            if "/" not in option_name:
+                # In case a pretty name isn't set
+                # For example groups[0] == "*OpenUI *PageRegion: PickOne"
+                option_name = f"{option_name}/"
+
+            # "*OpenUI *BuzzerStart/Start Job Beeps" -> "*BuzzerStart/Start Job Beeps"
+            # "*BuzzerStart/Start Job Beeps" ->
+            # option_name == "*BuzzerStart"
+            # option_name_pretty == "Start Job Beeps"
+            option_name, option_name_pretty = option_name.split(" ", 1)[1].split("/", 1)
+
+            # In case a pretty name isn't set
+            option_name_pretty = option_name_pretty or None
+
+            # option_name == "BuzzerStart"
+            option_name = remove_prefix(option_name, "*")
             default_value = ""
 
             option_values = []
+
+            # groups[1]:
+            # *DefaultBuzzerStart: 0Beeps
+            #
+            # *BuzzerStart 0Beeps/0: ""
+            # *BuzzerStart 1Beeps/1: ""
+            # *BuzzerStart 2Beeps/2: ""
+            # *BuzzerStart 3Beeps/3: ""
+            # *BuzzerStart 4Beeps/4: ""
+            # *BuzzerStart 5Beeps/5: ""
+            # *BuzzerStart 6Beeps/6: ""
+            # *BuzzerStart 7Beeps/7: ""
+            # *BuzzerStart 8Beeps/8: ""
+            # *BuzzerStart 9Beeps/9: ""
             for option_value in groups[1].split("\n"):
                 if len(option_value) == 0:
+                    # empty string
                     continue
                 if option_value.startswith(f"*Default{option_name}"):
+                    # option_value == "*DefaultBuzzerStart: 0Beeps"
                     default_value = option_value.split(": ")[1]
                 if option_value.startswith(f"*{option_name}"):
+                    # option_value == '*BuzzerStart 0Beeps/0: ""'
+
+                    # option_value == "*BuzzerStart 0Beeps/0"
+                    # content == '""'
                     option_value, content = option_value.split(":")
-                    option_value, option_pretty_value = (
-                        option_value.split(" ", 1)[1].split("/", 1)
-                    )
-                    content = content.strip().strip()
+
+                    # option_value == "0Beeps/0"
+                    option_value = option_value.split(" ", 1)[1]
+
+                    # option_valur == "0Beeps"
+                    # option_value_pretty == "0"
+                    option_value, option_value_pretty = option_value.split("/", 1)
+
+                    content = content.strip().strip('"')
                     option_values.append(
                         OptionValue(
-                            value=option_value, pretty_value=option_pretty_value, content=""
+                            value=option_value,
+                            pretty_value=option_value_pretty,
+                            content=content,
                         )
                     )
 
             options.append(
                 PrinterOption(
                     name=option_name,
+                    pretty_name=option_name_pretty,
                     type=option_type,
                     default_value=default_value,
                     values=option_values,
