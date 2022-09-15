@@ -48,12 +48,14 @@ Or you can pass name to function.
 class OptionValue:
     value: str
     pretty_value: str
+    content: str
 
 
 @dataclass
 class PrinterOption:
     name: str
+    pretty_name: Optional[str]
     type: Literal["PickOne"]
     default_value: str
-    values: list[OptionValue]
+    values: List[OptionValue]
 ```
