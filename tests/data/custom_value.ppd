@@ -1,0 +1,108 @@
+*PPD-Adobe:             "4.3"
+*FormatVersion:         "4.3"
+*FileVersion:           "2.2"
+*LanguageVersion:       English
+*LanguageEncoding:      ISOLatin1
+*PCFileName:            "CTS2000.ppd"
+*Manufacturer:          "CITIZEN"
+*Product:               "(CTS2000)"
+
+*OpenUI *PageSize/Media Size: PickOne
+*OrderDependency: 10 AnySetup *PageSize
+*DefaultPageSize: X72MMY190MM
+
+*%PageSize Custom/Custom:                     "<</PageSize[0 0]/HWResolution[203 203]/ImagingBBox null>>setpagedevice"
+
+*% 50.8mm wide page size note
+*% 50.8mm = 2.0in * 72 = 144 points
+*% use 143 points to cause 5.0 point difference with 52.5mm paper and help CUPS matching algorithm
+*% see CUPS src - gdevcups.c - search "find matching page size"
+
+*PageSize X52D5MMY30MM/52.5mm * 30mm:          "<</PageSize[148 85]/HWResolution[203 203]/ImagingBBox null>>setpagedevice"
+*PageSize X52D5MMY40MM/52.5mm * 40mm:          "<</PageSize[148 113]/HWResolution[203 203]/ImagingBBox null>>setpagedevice"
+*PageSize X52D5MMY50MM/52.5mm * 50mm:          "<</PageSize[148 141]/HWResolution[203 203]/ImagingBBox null>>setpagedevice"
+*PageSize X52D5MMY60MM/52.5mm * 60mm:          "<</PageSize[148 170]/HWResolution[203 203]/ImagingBBox null>>setpagedevice"
+*PageSize X52D5MMY70MM/52.5mm * 70mm:          "<</PageSize[148 198]/HWResolution[203 203]/ImagingBBox null>>setpagedevice"
+*PageSize X52D5MMY80MM/52.5mm * 80mm:          "<</PageSize[148 226]/HWResolution[203 203]/ImagingBBox null>>setpagedevice"
+*PageSize X52D5MMY90MM/52.5mm * 90mm:          "<</PageSize[148 255]/HWResolution[203 203]/ImagingBBox null>>setpagedevice"
+*PageSize X52D5MMY100MM/52.5mm * 100mm:        "<</PageSize[148 283]/HWResolution[203 203]/ImagingBBox null>>setpagedevice"
+*PageSize X52D5MMY110MM/52.5mm * 110mm:        "<</PageSize[148 311]/HWResolution[203 203]/ImagingBBox null>>setpagedevice"
+*PageSize X52D5MMY120MM/52.5mm * 120mm:        "<</PageSize[148 340]/HWResolution[203 203]/ImagingBBox null>>setpagedevice"
+*PageSize X52D5MMY130MM/52.5mm * 130mm:        "<</PageSize[148 368]/HWResolution[203 203]/ImagingBBox null>>setpagedevice"
+*PageSize X52D5MMY140MM/52.5mm * 140mm:        "<</PageSize[148 396]/HWResolution[203 203]/ImagingBBox null>>setpagedevice"
+*PageSize X52D5MMY150MM/52.5mm * 150mm:        "<</PageSize[148 425]/HWResolution[203 203]/ImagingBBox null>>setpagedevice"
+*PageSize X52D5MMY160MM/52.5mm * 160mm:        "<</PageSize[148 453]/HWResolution[203 203]/ImagingBBox null>>setpagedevice"
+*PageSize X52D5MMY170MM/52.5mm * 170mm:        "<</PageSize[148 481]/HWResolution[203 203]/ImagingBBox null>>setpagedevice"
+*PageSize X52D5MMY180MM/52.5mm * 180mm:        "<</PageSize[148 510]/HWResolution[203 203]/ImagingBBox null>>setpagedevice"
+*PageSize X52D5MMY190MM/52.5mm * 190mm:        "<</PageSize[148 538]/HWResolution[203 203]/ImagingBBox null>>setpagedevice"
+*PageSize X52D5MMY1000MM/52.5mm * 1000mm:      "<</PageSize[148 2834]/HWResolution[203 203]/ImagingBBox null>>setpagedevice"
+*PageSize X52D5MMY2000MM/52.5mm * 2000mm:      "<</PageSize[148 5669]/HWResolution[203 203]/ImagingBBox null>>setpagedevice"
+
+*PageSize X54D5MMY30MM/54.5mm * 30mm:          "<</PageSize[154 85]/HWResolution[203 203]/ImagingBBox null>>setpagedevice"
+*PageSize X54D5MMY40MM/54.5mm * 40mm:          "<</PageSize[154 113]/HWResolution[203 203]/ImagingBBox null>>setpagedevice"
+*PageSize X54D5MMY50MM/54.5mm * 50mm:          "<</PageSize[154 141]/HWResolution[203 203]/ImagingBBox null>>setpagedevice"
+*PageSize X54D5MMY60MM/54.5mm * 60mm:          "<</PageSize[154 170]/HWResolution[203 203]/ImagingBBox null>>setpagedevice"
+*PageSize X54D5MMY70MM/54.5mm * 70mm:          "<</PageSize[154 198]/HWResolution[203 203]/ImagingBBox null>>setpagedevice"
+*PageSize X54D5MMY80MM/54.5mm * 80mm:          "<</PageSize[154 226]/HWResolution[203 203]/ImagingBBox null>>setpagedevice"
+*PageSize X54D5MMY90MM/54.5mm * 90mm:          "<</PageSize[154 255]/HWResolution[203 203]/ImagingBBox null>>setpagedevice"
+*PageSize X54D5MMY100MM/54.5mm * 100mm:        "<</PageSize[154 283]/HWResolution[203 203]/ImagingBBox null>>setpagedevice"
+*PageSize X54D5MMY110MM/54.5mm * 110mm:        "<</PageSize[154 311]/HWResolution[203 203]/ImagingBBox null>>setpagedevice"
+*PageSize X54D5MMY120MM/54.5mm * 120mm:        "<</PageSize[154 340]/HWResolution[203 203]/ImagingBBox null>>setpagedevice"
+*PageSize X54D5MMY130MM/54.5mm * 130mm:        "<</PageSize[154 368]/HWResolution[203 203]/ImagingBBox null>>setpagedevice"
+*PageSize X54D5MMY140MM/54.5mm * 140mm:        "<</PageSize[154 396]/HWResolution[203 203]/ImagingBBox null>>setpagedevice"
+*PageSize X54D5MMY150MM/54.5mm * 150mm:        "<</PageSize[154 425]/HWResolution[203 203]/ImagingBBox null>>setpagedevice"
+*PageSize X54D5MMY160MM/54.5mm * 160mm:        "<</PageSize[154 453]/HWResolution[203 203]/ImagingBBox null>>setpagedevice"
+*PageSize X54D5MMY170MM/54.5mm * 170mm:        "<</PageSize[154 481]/HWResolution[203 203]/ImagingBBox null>>setpagedevice"
+*PageSize X54D5MMY180MM/54.5mm * 180mm:        "<</PageSize[154 510]/HWResolution[203 203]/ImagingBBox null>>setpagedevice"
+*PageSize X54D5MMY190MM/54.5mm * 190mm:        "<</PageSize[154 538]/HWResolution[203 203]/ImagingBBox null>>setpagedevice"
+*PageSize X54D5MMY1000MM/54.5mm * 1000mm:      "<</PageSize[154 2834]/HWResolution[203 203]/ImagingBBox null>>setpagedevice"
+*PageSize X54D5MMY2000MM/54.5mm * 2000mm:      "<</PageSize[154 5669]/HWResolution[203 203]/ImagingBBox null>>setpagedevice"
+
+*PageSize X72MMY30MM/72mm * 30mm:              "<</PageSize[204 85]/HWResolution[203 203]/ImagingBBox null>>setpagedevice"
+*PageSize X72MMY40MM/72mm * 40mm:              "<</PageSize[204 113]/HWResolution[203 203]/ImagingBBox null>>setpagedevice"
+*PageSize X72MMY50MM/72mm * 50mm:              "<</PageSize[204 141]/HWResolution[203 203]/ImagingBBox null>>setpagedevice"
+*PageSize X72MMY60MM/72mm * 60mm:              "<</PageSize[204 170]/HWResolution[203 203]/ImagingBBox null>>setpagedevice"
+*PageSize X72MMY70MM/72mm * 70mm:              "<</PageSize[204 198]/HWResolution[203 203]/ImagingBBox null>>setpagedevice"
+*PageSize X72MMY80MM/72mm * 80mm:              "<</PageSize[204 226]/HWResolution[203 203]/ImagingBBox null>>setpagedevice"
+*PageSize X72MMY90MM/72mm * 90mm:              "<</PageSize[204 255]/HWResolution[203 203]/ImagingBBox null>>setpagedevice"
+*PageSize X72MMY100MM/72mm * 100mm:            "<</PageSize[204 283]/HWResolution[203 203]/ImagingBBox null>>setpagedevice"
+*PageSize X72MMY110MM/72mm * 110mm:            "<</PageSize[204 311]/HWResolution[203 203]/ImagingBBox null>>setpagedevice"
+*PageSize X72MMY120MM/72mm * 120mm:            "<</PageSize[204 340]/HWResolution[203 203]/ImagingBBox null>>setpagedevice"
+*PageSize X72MMY130MM/72mm * 130mm:            "<</PageSize[204 368]/HWResolution[203 203]/ImagingBBox null>>setpagedevice"
+*PageSize X72MMY140MM/72mm * 140mm:            "<</PageSize[204 396]/HWResolution[203 203]/ImagingBBox null>>setpagedevice"
+*PageSize X72MMY150MM/72mm * 150mm:            "<</PageSize[204 425]/HWResolution[203 203]/ImagingBBox null>>setpagedevice"
+*PageSize X72MMY160MM/72mm * 160mm:            "<</PageSize[204 453]/HWResolution[203 203]/ImagingBBox null>>setpagedevice"
+*PageSize X72MMY170MM/72mm * 170mm:            "<</PageSize[204 481]/HWResolution[203 203]/ImagingBBox null>>setpagedevice"
+*PageSize X72MMY180MM/72mm * 180mm:            "<</PageSize[204 510]/HWResolution[203 203]/ImagingBBox null>>setpagedevice"
+*PageSize X72MMY190MM/72mm * 190mm:            "<</PageSize[204 538]/HWResolution[203 203]/ImagingBBox null>>setpagedevice"
+*PageSize X72MMY1000MM/72mm * 1000mm:          "<</PageSize[204 2834]/HWResolution[203 203]/ImagingBBox null>>setpagedevice"
+*PageSize X72MMY2000MM/72mm * 2000mm:          "<</PageSize[204 5669]/HWResolution[203 203]/ImagingBBox null>>setpagedevice"
+
+*PageSize X80MMY30MM/80mm * 30mm:              "<</PageSize[226 85]/HWResolution[203 203]/ImagingBBox null>>setpagedevice"
+*PageSize X80MMY40MM/80mm * 40mm:              "<</PageSize[226 113]/HWResolution[203 203]/ImagingBBox null>>setpagedevice"
+*PageSize X80MMY50MM/80mm * 50mm:              "<</PageSize[226 141]/HWResolution[203 203]/ImagingBBox null>>setpagedevice"
+*PageSize X80MMY60MM/80mm * 60mm:              "<</PageSize[226 170]/HWResolution[203 203]/ImagingBBox null>>setpagedevice"
+*PageSize X80MMY70MM/80mm * 70mm:              "<</PageSize[226 198]/HWResolution[203 203]/ImagingBBox null>>setpagedevice"
+*PageSize X80MMY80MM/80mm * 80mm:              "<</PageSize[226 226]/HWResolution[203 203]/ImagingBBox null>>setpagedevice"
+*PageSize X80MMY90MM/80mm * 90mm:              "<</PageSize[226 255]/HWResolution[203 203]/ImagingBBox null>>setpagedevice"
+*PageSize X80MMY100MM/80mm * 100mm:            "<</PageSize[226 283]/HWResolution[203 203]/ImagingBBox null>>setpagedevice"
+*PageSize X80MMY110MM/80mm * 110mm:            "<</PageSize[226 311]/HWResolution[203 203]/ImagingBBox null>>setpagedevice"
+*PageSize X80MMY120MM/80mm * 120mm:            "<</PageSize[226 340]/HWResolution[203 203]/ImagingBBox null>>setpagedevice"
+*PageSize X80MMY130MM/80mm * 130mm:            "<</PageSize[226 368]/HWResolution[203 203]/ImagingBBox null>>setpagedevice"
+*PageSize X80MMY140MM/80mm * 140mm:            "<</PageSize[226 396]/HWResolution[203 203]/ImagingBBox null>>setpagedevice"
+*PageSize X80MMY150MM/80mm * 150mm:            "<</PageSize[226 425]/HWResolution[203 203]/ImagingBBox null>>setpagedevice"
+*PageSize X80MMY160MM/80mm * 160mm:            "<</PageSize[226 453]/HWResolution[203 203]/ImagingBBox null>>setpagedevice"
+*PageSize X80MMY170MM/80mm * 170mm:            "<</PageSize[226 481]/HWResolution[203 203]/ImagingBBox null>>setpagedevice"
+*PageSize X80MMY180MM/80mm * 180mm:            "<</PageSize[226 510]/HWResolution[203 203]/ImagingBBox null>>setpagedevice"
+*PageSize X80MMY190MM/80mm * 190mm:            "<</PageSize[226 538]/HWResolution[203 203]/ImagingBBox null>>setpagedevice"
+*PageSize X80MMY1000MM/80mm * 1000mm:          "<</PageSize[226 2834]/HWResolution[203 203]/ImagingBBox null>>setpagedevice"
+*PageSize X80MMY2000MM/80mm * 2000mm:          "<</PageSize[226 5669]/HWResolution[203 203]/ImagingBBox null>>setpagedevice"
+
+*% Zoom resolution calculation note
+*% A4 real width = 209mm = 8.23in
+*% Printer real width = 72mm = 576 dots
+*% Printer real resolution = 203dpi
+*% Rendering resolution = floor(576 dots / (8.23in * (1 - zoom)))
+*% 69 = floor(576 / (8.23 * (1 - 0)))
+*% 139 = floor(576 / (8.23 * (1 - .5)))
+*CloseUI: *PageSize

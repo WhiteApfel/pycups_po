@@ -1,0 +1,44 @@
+*PPD-Adobe:             "4.3"
+*FormatVersion:         "4.3"
+*FileVersion:           "2.2"
+*LanguageVersion:       English
+*LanguageEncoding:      ISOLatin1
+*PCFileName:            "CTS2000.ppd"
+*Manufacturer:          "CITIZEN"
+*Product:               "(CTS2000)"
+
+*OpenUI *PaperType/Paper Type: PickOne
+*DefaultPaperType: 0Receipt
+*PaperType 0Receipt/Receipt: ""
+*PaperType 1Ticket/Ticket: ""
+*CloseUI: *PaperType
+
+*OpenGroup: BuzzerGroup/Buzzer Options
+*OpenUI *BuzzerStart/Start Job Beeps: PickOne
+*DefaultBuzzerStart: 0Beeps
+*BuzzerStart 0Beeps/0: "0"
+*BuzzerStart 1Beeps/1: "1"
+*BuzzerStart 2Beeps/2: "2"
+*BuzzerStart 3Beeps/3: "3"
+*BuzzerStart 4Beeps/4: "4"
+*BuzzerStart 5Beeps/5: "5"
+*BuzzerStart 6Beeps/6: "6"
+*BuzzerStart 7Beeps/7: "7"
+*BuzzerStart 8Beeps/8: "8"
+*BuzzerStart 9Beeps/9: "9"
+*CloseUI: *BuzzerStart
+
+*OpenUI *BuzzerEnd/End Job Beeps: PickOne
+*DefaultBuzzerEnd: 0Beeps
+*BuzzerEnd 0Beeps/0: ""
+*BuzzerEnd 1Beeps/1: ""
+*BuzzerEnd 2Beeps/2: ""
+*BuzzerEnd 3Beeps/3: ""
+*BuzzerEnd 4Beeps/4: ""
+*BuzzerEnd 5Beeps/5: ""
+*BuzzerEnd 6Beeps/6: ""
+*BuzzerEnd 7Beeps/7: ""
+*BuzzerEnd 8Beeps/8: ""
+*BuzzerEnd 9Beeps/9: ""
+*CloseUI: *BuzzerEnd
+*CloseGroup: BuzzerGroup

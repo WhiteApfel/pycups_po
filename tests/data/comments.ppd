@@ -1,0 +1,41 @@
+*PPD-Adobe:             "4.3"
+*FormatVersion:         "4.3"
+*FileVersion:           "2.2"
+*LanguageVersion:       English
+*LanguageEncoding:      ISOLatin1
+*PCFileName:            "CTS2000.ppd"
+*Manufacturer:          "CITIZEN"
+*Product:               "(CTS2000)"
+
+*OpenUI *PaperType/Paper Type: PickOne
+*DefaultPaperType: 0Receipt
+*PaperType 0Receipt/Receipt: ""
+*PaperType 1Ticket/Ticket: ""
+*% Example comment
+*% Second line
+*% Third line
+*CloseUI: *PaperType
+
+*OpenUI *BuzzerStart/Start Job Beeps: PickOne
+*DefaultBuzzerStart: 0Beeps
+
+*% Example comment
+*% Second line
+*% Third line
+
+*BuzzerStart 0Beeps/0: "0"
+*BuzzerStart 1Beeps/1: "1"
+*BuzzerStart 2Beeps/2: "2"
+*BuzzerStart 3Beeps/3: "3"
+*BuzzerStart 4Beeps/4: "4"
+
+*% Example comment
+*% Second line
+*% Third line
+
+*BuzzerStart 5Beeps/5: "5"
+*BuzzerStart 6Beeps/6: "6"
+*BuzzerStart 7Beeps/7: "7"
+*BuzzerStart 8Beeps/8: "8"
+*BuzzerStart 9Beeps/9: "9"
+*CloseUI: *BuzzerStart

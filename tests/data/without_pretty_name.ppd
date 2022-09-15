@@ -1,0 +1,14 @@
+*PPD-Adobe:             "4.3"
+*FormatVersion:         "4.3"
+*FileVersion:           "2.2"
+*LanguageVersion:       English
+*LanguageEncoding:      ISOLatin1
+*PCFileName:            "CTS2000.ppd"
+*Manufacturer:          "CITIZEN"
+*Product:               "(CTS2000)"
+
+*OpenUI *PaperType: PickOne
+*DefaultPaperType: 0Receipt
+*PaperType 0Receipt/Receipt: ""
+*PaperType 1Ticket/Ticket: ""
+*CloseUI: *PaperType
