@@ -130,7 +130,7 @@ class PrinterOptionsGenerator:
             printer_name, prefix="Printer", suffix="Options"
         )
 
-        dataclass_file = "from typing import Literal\n"
+        dataclass_file = "from typing import Literal, Union\n"
         dataclass_file += "from dataclasses import dataclass, field\n"
         dataclass_file += "from enum import Enum\n\n"
 
@@ -156,7 +156,7 @@ class PrinterOptionsGenerator:
                 option.name, prefix="Option", suffix="Values"
             )
             dataclass_file += (
-                f'\t{option.name}: {option_class_name} = "{option.default_value}"\n'
+                f'\t{option.name}: Union[str, {option_class_name}] = "{option.default_value}"\n'
             )
 
         return dataclass_file
