@@ -3,7 +3,7 @@ from typing import List
 
 import cups
 
-from .helpers import remove_prefix
+from .helpers import remove_prefix, string_to_valid_variable_name
 from .models import OptionValue, PrinterOption
 
 
@@ -126,17 +126,37 @@ class PrinterOptionsGenerator:
     def generate_options_dataclass(self, printer_name: str = None) -> str:
         print_name = printer_name or self.printer_name
         options = self.get_ppd_options(printer_name)
-        class_name = f"{print_name.replace('-', '').replace(' ', '')}Options"
+        class_name = string_to_valid_variable_name(
+            printer_name, prefix="Printer", suffix="Options"
+        )
 
         dataclass_file = "from typing import Literal\n"
-        dataclass_file += "from dataclasses import dataclass, field\n\n"
+        dataclass_file += "from dataclasses import dataclass, field\n"
+        dataclass_file += "from enum import Enum\n\n"
 
         dataclass_file += "@dataclass\n"
         dataclass_file += f"class {class_name}:\n"
         for option in options:
-            literal = f"""{', '.join(f'"{v.value}"' for v in option.values)}"""
+            option_class_name = string_to_valid_variable_name(
+                option.name, prefix="Option", suffix="Values"
+            )
+            dataclass_file += f"\tclass {option_class_name}(str, Enum):\n"
+            for option_value in option.values:
+                option_value_variable = string_to_valid_variable_name(
+                    option_value.value, prefix="value", separator="_",
+                )
+                dataclass_file += (
+                    f'\t\t{option_value_variable}: str = "{option_value.value}"'
+                    f'  # {option_value.pretty_value} / "{option_value.content}"\n'
+                )
+            dataclass_file += "\t\n"
+        for option in options:
+            # literal = f"""{', '.join(f'"{v.value}"' for v in option.values)}"""
+            option_class_name = string_to_valid_variable_name(
+                option.name, prefix="Option", suffix="Values"
+            )
             dataclass_file += (
-                f'\t{option.name}: Literal[{literal}] = "{option.default_value}"\n'
+                f'\t{option.name}: {option_class_name} = "{option.default_value}"\n'
             )
 
         return dataclass_file
