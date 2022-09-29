@@ -158,4 +158,9 @@ class PrinterOptionsGenerator:
             )
             dataclass_file += f'\t{option.name}: Union[str, {option_class_name}] = "{option.default_value}"\n'
 
+        dataclass_file += "\n"
+        dataclass_file += "\tdef __iter__(self):\n"
+        dataclass_file += "\t\tfor option_name in self.__dataclass_fields__:\n"
+        dataclass_file += "\t\t\tyield option_name, self.__getattribute__(option_name)\n"
+
         return dataclass_file

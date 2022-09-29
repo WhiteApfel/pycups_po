@@ -28,3 +28,7 @@ class PrinterFakePPDOptions:
 
 	BuzzerStart: Union[str, BuzzerStartValues] = "0Beeps"
 	BuzzerEnd: Union[str, BuzzerEndValues] = "1Beeps"
+
+	def __iter__(self):
+		for option_name in self.__dataclass_fields__:
+			yield option_name, self.__getattribute__(option_name)
