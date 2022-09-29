@@ -1,0 +1,30 @@
+from typing import Union
+from dataclasses import dataclass
+
+@dataclass
+class PrinterFakePPDOptions:
+	class BuzzerStartValues:
+		value_0Beeps: str = "0Beeps"  # 0 / "0"
+		value_1Beeps: str = "1Beeps"  # 1 / "1"
+		value_2Beeps: str = "2Beeps"  # 2 / "2"
+		value_3Beeps: str = "3Beeps"  # 3 / "3"
+		value_4Beeps: str = "4Beeps"  # 4 / "4"
+		value_5Beeps: str = "5Beeps"  # 5 / "5"
+		value_6Beeps: str = "6Beeps"  # 6 / "6"
+		value_7Beeps: str = "7Beeps"  # 7 / "7"
+		value_8Beeps: str = "8Beeps"  # 8 / "8"
+
+	class BuzzerEndValues:
+		value_0Beeps: str = "0Beeps"  # 0 / ""
+		value_1Beeps: str = "1Beeps"  # 1 / ""
+		value_2Beeps: str = "2Beeps"  # 2 / ""
+		value_3Beeps: str = "3Beeps"  # 3 / ""
+		value_4Beeps: str = "4Beeps"  # 4 / ""
+		value_5Beeps: str = "5Beeps"  # 5 / ""
+		value_6Beeps: str = "6Beeps"  # 6 / ""
+		value_7Beeps: str = "7Beeps"  # 7 / ""
+		value_8Beeps: str = "8Beeps"  # 8 / ""
+		value_9Beeps: str = "9Beeps"  # 9 / ""
+
+	BuzzerStart: Union[str, BuzzerStartValues] = "0Beeps"
+	BuzzerEnd: Union[str, BuzzerEndValues] = "1Beeps"

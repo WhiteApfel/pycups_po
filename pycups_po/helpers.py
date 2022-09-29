@@ -8,9 +8,14 @@ def remove_prefix(self: str, prefix: str) -> str:
         return self[:]
 
 
-def string_to_valid_variable_name(string: str, prefix: str = None, suffix: str = None, separator: str = ""):
+def string_to_valid_variable_name(
+    string: str, prefix: str = None, suffix: str = None, separator: str = ""
+):
     valid_variable_name = re.sub("\W|^(?=\d)", separator, string).strip(separator)
-    variable_name = f"{prefix or ''}{separator}{valid_variable_name}"
+    variable_name = (
+        f"{prefix or ''}{separator if prefix or not valid_variable_name.isidentifier() else ''}"
+        f"{valid_variable_name}"
+    )
     if suffix is not None:
         variable_name += f"{separator}{suffix}"
     return variable_name

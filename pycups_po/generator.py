@@ -124,39 +124,38 @@ class PrinterOptionsGenerator:
         return options
 
     def generate_options_dataclass(self, printer_name: str = None) -> str:
-        print_name = printer_name or self.printer_name
+        printer_name = printer_name or self.printer_name
         options = self.get_ppd_options(printer_name)
         class_name = string_to_valid_variable_name(
             printer_name, prefix="Printer", suffix="Options"
         )
 
-        dataclass_file = "from typing import Literal, Union\n"
-        dataclass_file += "from dataclasses import dataclass, field\n"
-        dataclass_file += "from enum import Enum\n\n"
+        dataclass_file = "from typing import Union\n"
+        dataclass_file += "from dataclasses import dataclass\n\n"
 
         dataclass_file += "@dataclass\n"
         dataclass_file += f"class {class_name}:\n"
         for option in options:
             option_class_name = string_to_valid_variable_name(
-                option.name, prefix="Option", suffix="Values"
+                option.name, suffix="Values"
             )
-            dataclass_file += f"\tclass {option_class_name}(str, Enum):\n"
+            dataclass_file += f"\tclass {option_class_name}:\n"
             for option_value in option.values:
                 option_value_variable = string_to_valid_variable_name(
-                    option_value.value, prefix="value", separator="_",
+                    option_value.value,
+                    prefix="value",
+                    separator="_",
                 )
                 dataclass_file += (
                     f'\t\t{option_value_variable}: str = "{option_value.value}"'
                     f'  # {option_value.pretty_value} / "{option_value.content}"\n'
                 )
-            dataclass_file += "\t\n"
+            dataclass_file += "\n"
         for option in options:
             # literal = f"""{', '.join(f'"{v.value}"' for v in option.values)}"""
             option_class_name = string_to_valid_variable_name(
-                option.name, prefix="Option", suffix="Values"
+                option.name, suffix="Values"
             )
-            dataclass_file += (
-                f'\t{option.name}: Union[str, {option_class_name}] = "{option.default_value}"\n'
-            )
+            dataclass_file += f'\t{option.name}: Union[str, {option_class_name}] = "{option.default_value}"\n'
 
         return dataclass_file
