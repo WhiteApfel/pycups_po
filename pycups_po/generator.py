@@ -156,7 +156,8 @@ class PrinterOptionsGenerator:
             option_class_name = string_to_valid_variable_name(
                 option.name, suffix="Values"
             )
-            dataclass_file += f'\t{option.name}: Union[str, {option_class_name}] = "{option.default_value}"\n'
+            dataclass_file += f'\t{option.name}: Union[str, {option_class_name}] ' \
+                              f'= "{option.default_value}"  # {option.pretty_name}\n'
 
         dataclass_file += "\n"
         dataclass_file += "\tdef __iter__(self):\n"

@@ -26,8 +26,8 @@ class PrinterFakePPDOptions:
 		value_8Beeps: str = "8Beeps"  # 8 / ""
 		value_9Beeps: str = "9Beeps"  # 9 / ""
 
-	BuzzerStart: Union[str, BuzzerStartValues] = "0Beeps"
-	BuzzerEnd: Union[str, BuzzerEndValues] = "1Beeps"
+	BuzzerStart: Union[str, BuzzerStartValues] = "0Beeps"  # Start Job Beeps
+	BuzzerEnd: Union[str, BuzzerEndValues] = "1Beeps"  # End Job Beeps
 
 	def __iter__(self):
 		for option_name in self.__dataclass_fields__:
