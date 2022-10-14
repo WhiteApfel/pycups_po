@@ -59,3 +59,62 @@ class PrinterOption:
     default_value: str
     values: List[OptionValue]
 ```
+
+### 💻 CLI
+
+**Show list of printers**
+```shell
+pycups_po printers
+# or
+pycups_po printers --host 192.168.1.12
+# or 
+pycups_po printers --host 192.168.1.12 --port 6631
+```
+
+```
+🖨 Printers
+├── CT-S2000
+│   ├── Info: CITIZEN CT-S2000
+│   └── State: ⏳ idle
+└── TR4540
+    ├── Info: Canon TR4540
+    └── State: ⏳ idle
+
+```
+
+**Show options**
+```shell
+pycups_po options TR4540
+# You can set the --host and --port in the same way
+```
+
+```
+⚙️ Options
+├── MediaType (Media Type)
+│   ├── Type: PickOne
+│   ├── Default: matte
+│   └── Values:
+│       ├── 'plain' (Plain Paper): <</MediaType(plain)>>setpagedevice
+│       ├── 'glossygold' (Photo Paper Plus Glossy II): <</MediaType(glossygold)>>setpagedevice
+...
+├── Duplex (Duplex Printing)
+│   ├── Type: PickOne
+│   ├── Default: None
+│   └── Values:
+│       ├── 'None' (Off): 
+│       ├── 'DuplexNoTumble' (Long-side stapling): 
+│       └── 'DuplexTumble' (Short-side stapling): 
+└── ColorModel (Color Model)
+    ├── Type: PickOne
+    ├── Default: rgb
+    └── Values:
+        └── 'rgb' (RGB): 
+```
+
+**Generate dataclass file**
+```shell
+pycups_po generate -o ./tr4540.py TR4540
+# or
+pycups_po generate --output-file ~/printer.py TR4540
+# You can set the --host and --port in the same way
+```
