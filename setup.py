@@ -34,4 +34,9 @@ setup(
     long_description=read("README.md"),
     long_description_content_type="text/markdown",
     keywords="pycups cups ppd options",
+    entry_points={
+        'console_scripts': [
+            'pycups_po = pycups_po.__main__:main'
+        ]
+    },
 )
