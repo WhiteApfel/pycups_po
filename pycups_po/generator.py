@@ -100,7 +100,11 @@ class PrinterOptionsGenerator:
 
                     # option_valur == "0Beeps"
                     # option_value_pretty == "0"
-                    option_value, option_value_pretty = option_value.split("/", 1)
+                    to_unpack = option_value.split("/", 1)
+                    if len(to_unpack) == 2:
+                        option_value, option_value_pretty = to_unpack
+                    else:
+                        option_value = option_value_pretty = to_unpack[0]
 
                     content = content.strip().strip('"')
                     option_values.append(
